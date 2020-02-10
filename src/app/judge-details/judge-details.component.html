@@ -1,0 +1,29 @@
+<div class="view intro-2">
+  <div class="full-bg-img">
+    <div class="mask rgba-teal-light flex-center">
+  </div>
+</div>
+</div>
+
+<div *ngIf="judge" class="container">
+  <h2 class="text-center">{{judge.firstName | uppercase}} {{judge.lastName | uppercase}}  Details</h2>
+  <div>
+  <h4>
+First Name: {{judge.firstName}}
+   </h4>
+   <h4>
+    Middle Name: {{judge.middleName}}
+       </h4>
+       <h4>
+       Last Name: {{judge.lastName}}
+           </h4>
+           <h4>
+            Category: {{judge.category}}
+               </h4>
+               <h4>
+                License Number: {{judge.licenseNumber}}
+                   </h4>
+
+  </div>
+</div>
+<button (click)="goBack()">go back</button>

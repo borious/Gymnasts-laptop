@@ -1,0 +1,51 @@
+<div class="view intro-2">
+  <div class="full-bg-img">
+    <div class="mask rgba-blue-light flex-center">
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <h1 class="font-weight-light text-center">List of Judges</h1>
+  <div class="row">
+    <div class="col-md-12 mx-auto">
+      <div class="md-form">
+        <input
+          type="text"
+          [(ngModel)]="searchText"
+          class="form-control"
+          id="search"
+          mdbInput
+          (focus)="focusFunction()"
+        />
+        <label for="search">Search</label>
+      </div>
+      {{searchText}}
+    </div>
+  </div>
+  <table mdbTable class="z-depth-1">
+    <thead>
+      <tr>
+        <th>First Name</th>
+          <th>Middle Name</th>
+          <th>Last Name</th>
+          <th>Category</th>
+          <th>License Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let judge of judges" routerLink="/judge-details/{{judge.id}}" style="cursor: pointer;" class="hoverable">
+        <!-- <th scope="row">{{el.id}}</th> -->
+
+        <td>{{ judge.firstName }}</td>
+        <td>{{ judge.middleName }}</td>
+        <td>{{ judge.lastName }}</td>
+        <td>{{ judge.category }}</td>
+        <td>{{ judge.licenseNumber }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+

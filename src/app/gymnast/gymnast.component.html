@@ -1,0 +1,59 @@
+<div class="view intro-2">
+  <div class="full-bg-img">
+    <div class="mask rgba-teal-light flex-center">
+  </div>
+</div>
+</div>
+
+
+<div class="container">
+  <h1 class="font-weight-light text-center">List of Gymnasts</h1>
+  <div class="row">
+    <div class="col-md-12 mx-auto">
+      <div class="md-form">
+        <input
+          type="text"
+          [(ngModel)]="searchText"
+          class="form-control"
+          id="search"
+          mdbInput
+          (focus)="focusFunction()"
+        />
+        <label for="search">Search</label>
+      </div>
+      {{searchText}}
+    </div>
+  </div>
+  <table mdbTable class="z-depth-1">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Middle Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Age Category</th>
+        <th>Club</th>
+        <th>License Number</th>
+        <th>Filed This Year</th>
+        <th>Technical Level</th>
+        <th>Competitions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let gymnast of gymnasts">
+        <!-- <th scope="row">{{el.id}}</th> -->
+        <td>{{gymnast.firstName}}</td>
+        <td>{{gymnast.middleName}}</td>
+        <td>{{gymnast.lastName}}</td>
+        <td>{{gymnast.age}}</td>
+        <td>{{gymnast.ageCategory}}</td>
+        <td>{{gymnast.club}}</td>
+        <td>{{gymnast.licenseNumber}}</td>
+        <td>{{gymnast.filedThisYear}}</td>
+        <td>{{gymnast.technicalLevel}}</td>
+        <td>{{gymnast.competitions}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
